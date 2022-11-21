@@ -23,10 +23,16 @@
 \RequirePackage{csquotes}
 \RequirePackage[
 	style=apa,
-	citestyle=authoryear,
+	citestyle=numeric,
   hyperref=true,
 	backref=true
 	]{biblatex}
+% \RequirePackage[
+% 	style=numeric,
+% 	citestyle=numeric,
+%   hyperref=true,
+% 	backref=true
+% 	]{biblatex}
 \RequirePackage[linktocpage,breaklinks,colorlinks,%
                 linkcolor=black,anchorcolor=black,citecolor=black,%
                 filecolor=black,menucolor=black,runcolor=black,%

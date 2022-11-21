@@ -14,9 +14,10 @@
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{graphicx}
+
 \floatstyle{plaintop}
 \restylefloat{table}
-\addbibresource{Bibliography.bib}
+\bibliography{Bibliography}
 % \setlength{\parskip}{\baselineskip}%
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\listalgorithmcfname}{Índice de Algoritmos}
@@ -29,22 +30,22 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{purple},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=4
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{purple},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4
 }
 
 \lstset{style=mystyle}
@@ -75,28 +76,29 @@
 \renewcommand{\lstlistingname}{Ejemplo de código}
 \renewcommand{\lstlistlistingname}{Ejemplos de código}
 
+\DeclareUnicodeCharacter{0301}{\'{e}}
 \begin{document}
-
-\frontmatter
-\maketitle
-
-\include{FrontMatter/Dedication}
-\include{FrontMatter/Thanks}
-\include{FrontMatter/SupervisorOpinion}
-\include{FrontMatter/Abstract}
-\include{FrontMatter/Contents}
-
-\mainmatter
-
-\include{MainMatter/Introduction}
-\include{MainMatter/Background}
-\include{MainMatter/Proposal}
-\include{MainMatter/Implementation}
-
-\backmatter
-
-\include{BackMatter/Conclusions}
-\include{BackMatter/Recomendations}
-\include{BackMatter/Bibliography}
-
+	
+	\frontmatter
+	\maketitle
+	
+	\include{FrontMatter/Dedication}
+	\include{FrontMatter/Thanks}
+	\include{FrontMatter/SupervisorOpinion}
+	\include{FrontMatter/Abstract}
+	\include{FrontMatter/Contents}
+	
+	\mainmatter
+	
+	\include{MainMatter/Introduction}
+	\include{MainMatter/Background}
+	\include{MainMatter/Proposal}
+	\include{MainMatter/Implementation}
+	
+	\backmatter
+	
+	\include{BackMatter/Conclusions}
+	\include{BackMatter/Recomendations}
+	\include{BackMatter/Bibliography}
+	
 \end{document}
