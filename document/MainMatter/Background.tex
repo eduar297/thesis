@@ -106,7 +106,7 @@ Los sistemas complejos (p. ej. organismos pluricelulares, colonias de hormigas, 
 	\item Los componentes básicos de estos sistemas complejos (células, hormigas, individuos, poblaciones, empresas…) perciben su entorno y responden a cambios en él de forma potencialmente diferente.
 \end{itemize}
 
-Todas estas características hacen que el proceso de modelado formal de sistemas complejos difiera sustancialmente del de otros sistemas más simples. En particular, su naturaleza descentralizada, la presencia de bucles de causalidad y retroalimentación no lineales, y el hecho de contener varias unidades más o menos autónomas, que pueden interaccionar, evolucionar, y adaptar su comportamiento a cambios en el entorno, implica que en la mayoría de los casos es muy difícil —si no imposible— conseguir un modelo que pueda describir el sistema complejo adecuadamente y que además sea resoluble matemáticamente. \parencite{izquierdo2008modelado}\\
+Todas estas características hacen que el proceso de modelado formal de sistemas complejos difiera sustancialmente del de otros sistemas más simples. En particular, su naturaleza descentralizada, la presencia de bucles de causalidad y retroalimentación no lineales, y el hecho de contener varias unidades más o menos autónomas, que pueden interaccionar, evolucionar, y adaptar su comportamiento a cambios en el entorno, implica que en la mayoría de los casos es muy difícil, si no imposible, conseguir un modelo que pueda describir el sistema complejo adecuadamente y que además sea resoluble matemáticamente. \parencite{izquierdo2008modelado}\\
 
 Un modelo computacional es un modelo formal (que por lo tanto puede expresarse en lenguaje matemático como un conjunto de ecuaciones), y la simulación computacional es una herramienta que nos permite estudiarlo más allá de los límites actuales de las matemáticas. De este modo, el resultado final es un modelo potencialmente más realista, y que todavía conserva el rigor formal de los modelos matemáticos más tradicionales. \parencite{izquierdo2008modelado}\\
 
@@ -141,15 +141,126 @@ Puesto que el énfasis en la simulación basada en agentes está en encontrar ab
 
 \subsubsection{Simulación basada en dinámica de sistemas}
 
+La dinámica de sistemas, situada en la misma área de conocimiento que la teoría general de sistemas, la automática y la cibernética, nació de la aplicación —realizada en la década de los 50 por Jay W. Forrester, de la teoría de los bucles de realimentación a un caso concreto de gestión industrial. Aplicada en 1970 al estudio del mundo como sistema dinámico,  esta metodología, cuyo objetivo es construir modelos dinámicos de sistemas sociales basándose en la opinión de expertos y el uso de la simulación con computadores, es actualmente una  herramienta que cubre un amplio campo de aplicaciones, desde la  gestión de empresas hasta la construcción de modelos urbanos, regionales, sociológicos y ecológicos. \parencite{aracil1997dinamica} \\
 
+La dinámica de sistemas es otra técnica de modelado de sistemas complejos. También se utiliza para modelar sistemas en ingeniería \parencite{ford1997system, ford1998dynamic}, economía y negocios \parencite{bayer2004sterman, ellis2007impacto}, entre otros. \parencite{izquierdo2008modelado}.
 
+Esta tiene como base el concepto de retroalimentación, o causalidad circular entre variables observables.
+A diferencia de la simulación basada en agentes, el centro de la dinámica de sistemas está en la relación que existe entre las variables observables.
+Por tanto la idea central de este modelo de simulación está en encontrar las variables críticas del sistema complejo e identificar los vínculos causales existentes entre ellas.
 
+\section{Modelos de Simulación de Cultivos}
 
+Los modelos de simulación son una herramienta fundamental para entender la complejidad de los sistemas ecológicos y ambientales como bien se plasmó anteriormente.
+Un buen modelo es capaz de revelar interacciones entre los diferentes componentes que no eran evidentes al estudiar cada uno de los procesos separadamente y permitirá llevar a cabo experimentos, que no se podrían realizar en el sistema real dado que pueden ser muy costosos en términos de trabajo, recursos o tiempo.
+Sin perder generalidad, una de las funciones que estos permiten, es la de analizar, pronosticar e incluso mejorar el rendimiento de los cultivos.
+Dichos modelos tienen varias aplicaciones potenciales en la actualidad en respuesta a temas que guardan relación con la investigación, manejo y planificación de cultivos. Estos juegan un papel importante en la toma de decisiones en la agricultura al cuantificar, interpretar y predecir las necesidades hídricas de los cultivos, su desarrollo y rendimiento. \parencite{granmaEMFord}
+Durante las últimas décadas se han aplicado estos modelos en países de clima templado debido a los grandes beneficios que aportan.\\
 
+Como un modelo no es más que una representación simplificada de un sistema, y un sistema es una parte bien delimitada de la realidad, se puede ver un sistema de cultivo como el cultivo en sí con todos sus órganos, o sea, raíz, tallo y hojas, sus procesos y mecanismos como el crecimiento, desarrollo, fotosíntesis, transpiración, entre otros. \parencite{hernandez2009modelos}
 
+La modelación empezó a aumentar su importancia en el sector de la agronomía dada su capacidad de brindar información de manera periódica de todo el sistema biológico o una parte, como es el sistema de producción agrícola. \parencite{guevara2007simulacion}
 
+Una sabia utilización de los recursos en la actualidad implica una mayor probabilidad de aumento de la producción alimenticia. Además, el cambio climático, la variabilidad del clima, suelo, el secuestro de carbono a largo plazo, efectos en la seguridad alimentaria y la sostenibilidad del medio ambiente se han convertido en aspectos importantes a tener en cuenta. Por otra parte, la agricultura de los países tropicales enfrenta cada vez más nuevos retos, debido a cambios en las políticas macroeconómicas, al crecimiento de la población, el bajo rendimiento y a los límites de sostenibilidad de los recursos naturales utilizados en la producción. Conocer adecuadamente la dinámica y los efectos de los principales factores involucrados en el desarrollo agrícola, para poder elaborar alternativas viables de progreso en nuestros trópicos americanos, conservando los recursos naturales mediante su utilización racional, son aspectos de especial importancia y deben ser objeto prioritario de actualización profesional. Cada día resulta más crucial la necesidad de la información en la toma de decisiones y existe un vacío importante entre la información que se necesita y la que se genera tradicionalmente mediante la investigación disciplinaria. Para este propósito una herramienta como los \textbf{modelos de simulación de los cultivos} es de gran utilidad.  \parencite{hernandez2009modelos}
 
+Los modelos de simulación son una herramienta que facilitan la toma de decisiones, para seleccionar la mejor alternativa que se puede lograr con una combinación de recursos y precios, y muestra cuánto se podría pagar por una unidad más de cada recurso que se agota. \parencite{holmann2002uso}\\
 
+En la década del 50 aparecen los modelos de simulación, luego a mediados de los 60 aparece el concepto de sistemas dinámicos, que como se vio en anteriores secciones, incluyen la variable tiempo y representan el flujo de esos procesos y sus interacciones. En esta última etapa, destacan dos importantes pioneros, W. G. Duncan en la University of Kentucky y C. T. de Wit en la Agricultural University de Wageningen, que desarrollaron modelos como herramienta para explicaciones científicas, como por ejemplo, sintetizar y mejorar la comprensión de procesos tales como la intercepción de radiación y fotosíntesis, desarrollando modelos simples que consideraban únicamente la producción potencial relacionada con la radiación y la temperatura. En la década del 70 se formaliza aquel concepto de dinámica de sistemas y en los 80 se refina mediante técnicas de computación la verificación, validación y evaluación de esos modelos. 
+En esta última década aparecen los primeros modelos de simulación para los cultivos de maíz, soja, trigo y arroz, incluidos en el paquete DSSAT (Decision Support System for Agrotechnology Transfer) “Sistema de apoyo para las decisiones de transferencia agrotecnológica”.
+La simulación de sistemas agrícolas comenzó a ser una herramienta fundamental para la integración de los diferentes componentes productivos dentro de los sistemas agrícolas. \parencite{hernandez2009modelos}
+
+Los avances en el conocimiento de las interacciones dentro del ecosistema, influenciado por el ambiente y por las prácticas de manejo, expandió la potencialidad de uso de esta herramienta como ayuda para la toma de decisiones. \parencite{barrett2018humanization}
+
+A mediados de los 90 gana auge la tecnología informática permitiendo una mayor utilización de estos modelos para el estudio y resolución de problemas específicos como el desarrollo y crecimiento de los cultivos, evaluación de respuesta a la fertilización, estrategias de riego, situaciones de estrés, predicción de pérdidas por erosión, lixiviación de pesticidas, contaminación del ambiente, calentamiento global de la atmósfera, entre otros. \parencite{guevara2007simulacion}
+
+En general, son aceptables los puntos de vista de los que aseveran que la implementación de los modelos de simulación para las ciencias agrícolas y biológicas y sus usos prácticos está en un momento de gran importancia. \parencite{galvez2008modelacion}
+
+\subsection{Modelos, Características y su Utilización}
+
+En la actualidad se cuenta con una rica fuente de datos y conocimiento dentro de cada campo en particular, debido a esto se desarrollan modelos con distintos niveles de complejidad. La clasificación de los modelos ha sido intentada anteriormente, pero no se pueden hacer delimitaciones definidas, ya que los modelos generalmente poseen características de más de un grupo. \parencite{galvez2008modelacion, hernandez2009modelos}\\
+
+Se pueden clasificar estos modelos de simulación en dos grupos:
+\begin{enumerate}
+	\item Empíricos: son descriptivos, se derivan de datos observados sin involucrar procesos fisiológicos y tienen escasa capacidad explicativa.
+	\item Mecanicistas: poseen capacidad explicativa de la fisiología del cultivo, porque consideran aspectos como la temperatura, la radiación fotosintéticamente activa, el índice de área foliar, la fotosíntesis, la respiración y la eficiencia en el uso de la radiación. \parencite{refugio2004modelos}
+\end{enumerate}
+
+Dentro de estas clasificaciones existen otras categorías, que de acuerdo a sus características han sido nombradas de diferente forma.
+Los modelos que estudian las relaciones biológicas para describir el comportamiento de un sistema son denominados modelos mecanísticos, a diferencia de los modelos empíricos que describen las relaciones matemáticas entre los datos. \parencite{vargas2004modelo}.
+
+\textbf{Modelos empíricos o descriptivos}: Estos modelos describen, de un modo simplificado, el comportamiento de un cultivo.
+El desarrollo de un modelo empírico se basa en la individualización, a partir de datos experimentales, de una o más ecuaciones matemáticas, para la representación del proceso examinado. Las principales carencias de este tipo de aproximación son las de investigar en la limitada validez en ambientes diversos a los originales y en el empleo de las ecuaciones que a menudo no tienen un significado biológico \parencite{bandi2003instrumentos}
+
+Los modelos empíricos son descripciones directas de los datos observados y se expresan generalmente como ecuaciones de regresión (con uno o varios factores) y se utilizan para estimar la producción final. Ejemplos de tales modelos incluyen la respuesta de la producción a la aplicación de fertilizantes, la relación entre el área de la hoja y la cantidad de hojas de una planta dada, la relación entre la altura del tallo y el número de tallos, su diámetro y la producción final de caña de azúcar. \parencite{galvez2008modelacion}
+
+\textbf{Modelos mecanísticos}: Estos modelos son aquellos que describen el comportamiento del sistema en términos de propiedades de bajo nivel. Por tanto, existe comprensión o explicación en los niveles inferiores. Estos modelos tienen la habilidad de imitar importantes procesos físicos, químicos o biológicos, y describir cómo y por qué resulta una respuesta particular. El analista comienza usualmente con algún empirismo y en la medida que se gana en conocimiento se introducen variables y parámetros adicionales para explicar la producción de la cosecha. Así, el analista adopta un enfoque reduccionista. La mayoría de los modelos de crecimiento de cultivos caen dentro de esta categoría. \parencite{galvez2008modelacion}
+
+\textbf{Modelos estáticos y dinámicos}: Los modelos estáticos representan relaciones entre las variables que no se modifican en el tiempo y, por tanto, se conoce su valor final y no su evolución en el tiempo (por ejemplo la simulación de la intercepción solar, fotosíntesis). \parencite{bandi2003instrumentos}
+
+Los modelos dinámicos describen el modo en el cual el sistema cambia en el tiempo y, por lo tanto, es posible seguir la evolución temporal de cada una de las variables del sistema (por ejemplo el balance de nitrógeno y agua en el suelo). \parencite{bandi2003instrumentos}
+
+\textbf{Modelos determinísticos y estocásticos}: Los modelos determinísticos atribuyen un solo valor a cada variable del sistema. \parencite{bandi2003instrumentos} Hacen predicciones para cantidades (por ejemplo, producción de la cosecha) sin ninguna distribución probabilística asociada, varianza o elemento aleatorio. En los sistemas biológicos y agrícolas son normales las variaciones, debido a imprecisiones en los datos recogidos y a heterogeneidad del material con que se ha trabajado. En algunos casos, los modelos determinísticos pueden ser adecuados a pesar de estas variaciones inherentes, pero en otros pueden resultar insatisfactorios, por ejemplo, en la predicción de lluvia. Cuanto mayor sea la incertidumbre del sistema, más inadecuados se vuelven los modelos determinísticos. \parencite{galvez2008modelacion} Los modelos estocásticos señalan, en cambio, para una variable una distribución de valores. \parencite{bandi2003instrumentos}
+
+Cuando la variación y la incertidumbre alcanzan un nivel alto, se hace recomendable desarrollar un modelo estocástico que dé un valor medio esperado con una varianza asociada. Sin embargo, los modelos estocásticos tienden a ser difíciles de manipular y rápidamente se vuelven muy complejos. Por consiguiente, es recomendable intentar resolver el problema inicialmente con un enfoque determinístico y utilizar el enfoque estocástico sólo si los resultados no son adecuados o satisfactorios. \parencite{galvez2008modelacion, hernandez2009modelos}
+
+Para el procesamiento y análisis de la problemática, utilizando análisis de regresión, es necesario considerar \parencite{fernandez2003biomodelos, rodriguez2018aplicaciones}:
+\begin{itemize}
+	\item Ploteo de puntos para analizar tendencia de datos.
+	\item Selección del tipo de modelo a ajustar.
+	\item Ajuste del modelo, con el apoyo de un software apropiado.
+	\item Descripción del proceso a partir del modelo obtenido.
+\end{itemize}
+
+En estos estudios se requiere de una labor eficiente en la organización y desarrollo de la investigación científica y el conocimiento que esta genera, lo que puede contribuir en gran medida la aplicación consecuente de estos modelos, con el apoyo de las nuevas tecnologías de la información y la comunicación. Igualmente, con mucha frecuencia, no se valoran los supuestos teóricos de los modelos estadísticos y no se establecen conclusiones válidas a partir de la información analizada. \parencite{guerra2003criterios}:
+\begin{itemize}
+	\item Métodos de ajuste de los modelos.
+	\item Error estándar de los estimadores de los parámetros (Test t de Student).
+	\item Coeficiente de variación de los estimadores.
+	\item Límites de confianza de los parámetros.
+	\item Test de redundancia de los parámetros.
+	\item Análisis de varianza relacionado con el modelo en cuestión.
+	\item Coeficiente de determinación $R^2$ y $R^2$ ajustado por los grados de libertad, para modelos con diferentes números de parámetros.
+	\item Suma de cuadrados o Cuadrado Medio Residual.
+	\item Error estándar de estimación.
+	\item Test de falta de ajuste del modelo.
+	\item Análisis del efecto del uso de transformaciones en el modelo.
+	\item Diagnóstico y tratamiento de la multicolinealidad, en modelos de regresión lineal múltiple.
+	\item Validación de las predicciones del modelo.
+	\item Estadístico PRESS (Suma de Cuadrados del Error de Predicción).
+	\item Estadístico CMEP (Cuadrado Medio del Error de Predicción).
+	\item Estadístico Cp de Mallows.
+	\item Coeficientes de correlación entre los resultados predichos y los reales.
+	\item Análisis de la precisión de las estimaciones.
+	\item Análisis de los residuos.
+	\item Normalidad (Test de ShapiroWilks, Kolmogorov-Smirnov).
+	\item Autocorrelación (Test de Rachas, Signos, DurbinWatson, $X^2$ de independencia, Ljung y Box).
+	\item Homocedasticidad (Gráficos de los residuos, Test de Cochran, Bartlett y Hartley).
+\end{itemize}
+
+\subsection{Aplicaciones de Modelos y Simulación de cultivos agrícolas en Cuba}
+
+Desde la década de los 80 se ha venido utilizando la modelación por algunos investigadores cubanos con el objetivo de describir el crecimiento de cultivares. En el Instituto Nacional de Ciencias Agrícolas (INCA) se realizaron comparaciones entre varias funciones matemáticas para describir el crecimiento de algunos órganos en posturas de café crecidas en vivero \parencite{soto1986crecimiento}. Se determinó, además, la influencia del uso o no de la sombra durante el período de aviveramiento, la altura sobre el nivel del mar y dos fechas de siembra, en la dinámica de crecimiento de plántulas de cafeto \parencite{soto1991dlnamlca, hernandez2009modelos, rodriguez2018aplicaciones}.
+
+También se han comparado modelos para medir la respuesta a dosis de nitrógeno en maíz y cafeto. Lo cual demostró que un modelo discontinuo rectilíneo resulta más adecuado en el sistema de recomendación de dosis óptimas de fertilizantes nitrogenados para estos cultivos, en comparación al modelo curvilíneo, que brinda dosis óptimas superiores, que implican un menor factor parcial de productividad de la dosis recomendada \parencite{martin2016comparacion, rodriguez2018aplicaciones}.
+
+Otros trabajos aplicaron herramientas de modelación para el análisis de las respuestas de las interacciones planta-ambientemanejo en distintos escenarios de la producción de arroz, maíz, sorgo y trigo en Cuba \parencite{hernandez2016utilizacion}; demostrando que estas permiten establecer estrategias para el desarrollo de los cultivos estudiados en escenarios futuros y en otras condiciones de cultivo. Por primera vez en el país, se cuenta con información para poder predecir el comportamiento y rendimiento de estos cereales. Demuestran además que el modelo DSSAT puede ser utilizado para las condiciones de Cuba en los indicadores de rendimiento y sus componentes. \parencite{rodriguez2018aplicaciones}.
+
+Por los beneficios que aportan los modelos determinísticos, especialistas de la Universidad Agraria de La Habana y del Instituto Nacional de Riego y Drenaje, elaboran los primeros trabajos para utilizar, en las condiciones geográficas de Cuba, cinco de los modelos agrohidrológicos de alcance internacional. Por primera vez en Cuba se brindan los parámetros que describen las propiedades hidráulicas para los principales grupos de suelos cubanos. Esta investigación le confiere validez al modelo SWACROP para ser utilizado en el cultivo de la papa en condiciones tropicales \parencite{ruiz1997utilizacion, rodriguez2018aplicaciones}.
+
+Algunos trabajos se han realizado, durante varios años, en la evaluación y validación de diferentes modelos de simulación de transferencias hídricas para las condiciones edafoclimáticas de la región sur de La Habana (actualmente Mayabeque y Artemisa). Estas investigaciones pretenden resumir y discutir las principales características de los modelos de simulación STIC y MACRO y sus posibilidades para la predicción del comportamiento de los cultivos agrícolas ante diferentes manejos de agua, fertilización y ambientes climáticos. \parencite{lopez20143, robaina2013crop, rodriguez2018aplicaciones}
+
+También se ha utilizado la modelación matemática con el fin de estudiar el crecimiento del diámetro medio, la altura media y el volumen por hectárea de \textit{Pinus caribaea morelet var.}
+\textit{Caribaea barret} y \textit{golfari }en la Unidad Silvícola “Los Jazmines” de Viñales y en la Empresa Forestal Integral “La Palma” \parencite{suarez2011modelacion, sarria2013modelacion}. Donde se determinaron los modelos que mejor describen el comportamiento de las variables estudiadas en cada uno de los escenarios. \parencite{rodriguez2018aplicaciones}
+
+La aplicación a la producción de pastos y forrajes, tuvo sus inicios en pasto estrella (C. nlemfuensis) \parencite{del1998analisis, torres1999empleo}, donde se encontraron relaciones polinómicas entre las variables; pero en estos modelos los parámetros no tienen interpretación biológica. Posteriormente se modeló y simuló el comportamiento productivo del pasto estrella (C. nlemfuensis) bajo diferentes frecuencias de corte, niveles de fertilización y condiciones climatológicas adversas para el desarrollo de este cultivo \parencite{rodriguez2020modelacion}. El modelo Gompertz utilizado ajustó los datos con coeficientes de determinación que estuvieron alrededor del $99 \% $ para los períodos lluvioso y poco lluvioso. Además pronostica que un incremento de la temperatura media del planeta en 2 y 4 ºC afectará el rendimiento de materia seca acumulada de este cultivo principalmente en el período poco lluvioso. \parencite{rodriguez2018aplicaciones}
+
+Otros autores estudiaron la dinámica de acumulación de biomasa del king grass (P. purpureum) o de algunos de sus clones con el empleo de modelos no lineales \parencite{diaz2007evaluacion, noda2013modelacion}. Además, en cultivares de Brachiaria, Panicum y Pennisetum y en variedades de Tithonia diversifolia, se evaluaron diferentes modelos y encontraron ajustes lineales para las variables en estudio \parencite{ramirez2012rendimiento, torres2012utilizacion, rodriguez2018aplicaciones}.
+
+\subsection{Modelos de Cultivo más Conocidos}
+
+Los modelos de simulación agronómica son herramientas que integran información, y permiten analizar y cuantificar las relaciones existentes entre los factores mencionados y sus efectos como componentes del sistema, para evaluar diferentes planteos productivos o analizar un factor manteniendo los otros constantes; por ejemplo, la variación del rendimiento por efecto del clima sin modificar el manejo, el genotipo y el suelo. Numerosos modelos han sido desarrollados por diferentes grupos de trabajo y cada uno de ellos tiene fortalezas y debilidades para predecir las variables de respuesta. Es por ello necesario validar los modelos en los ambientes en donde se utilizarán \parencite{salvagiotti2003analisis}.
+
+No obstante la capacidad relativa de los modelos existentes y la credibilidad de sus resultados es todavía un aspecto importante a valorar. Esto está asociado primeramente a la no disponibilidad de datos apropiados para la validación del modelo y, por otra, a la inadecuación en las representaciones de los procesos e interacciones del sistema agua-suelo-planta-atmósfera. Es por tanto muy importante antes de adoptar uno u otro modelo para aplicaciones agrícolas y medioambientales que se realice un trabajo de evaluación y validación exhaustivo de estos \parencite{lopez20143}.\\
 
 
 
