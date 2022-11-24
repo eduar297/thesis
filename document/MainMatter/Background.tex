@@ -211,7 +211,7 @@ Para el procesamiento y análisis de la problemática, utilizando análisis de r
 	\item Descripción del proceso a partir del modelo obtenido.
 \end{itemize}
 
-En estos estudios se requiere de una labor eficiente en la organización y desarrollo de la investigación científica y el conocimiento que esta genera, lo que puede contribuir en gran medida la aplicación consecuente de estos modelos, con el apoyo de las nuevas tecnologías de la información y la comunicación. Igualmente, con mucha frecuencia, no se valoran los supuestos teóricos de los modelos estadísticos y no se establecen conclusiones válidas a partir de la información analizada. \parencite{guerra2003criterios}:
+En estos estudios se requiere de una labor eficiente en la organización y desarrollo de la investigación científica y el conocimiento que esta genera, a lo que puede contribuir en gran medida la aplicación consecuente de estos modelos, con el apoyo de las nuevas tecnologías de la información y la comunicación. Igualmente, con mucha frecuencia, no se valoran los supuestos teóricos de los modelos estadísticos y no se establecen conclusiones válidas a partir de la información analizada. \parencite{guerra2003criterios}:
 \begin{itemize}
 	\item Métodos de ajuste de los modelos.
 	\item Error estándar de los estimadores de los parámetros (Test t de Student).
@@ -262,16 +262,99 @@ Los modelos de simulación agronómica son herramientas que integran informació
 
 No obstante la capacidad relativa de los modelos existentes y la credibilidad de sus resultados es todavía un aspecto importante a valorar. Esto está asociado primeramente a la no disponibilidad de datos apropiados para la validación del modelo y, por otra, a la inadecuación en las representaciones de los procesos e interacciones del sistema agua-suelo-planta-atmósfera. Es por tanto muy importante antes de adoptar uno u otro modelo para aplicaciones agrícolas y medioambientales que se realice un trabajo de evaluación y validación exhaustivo de estos \parencite{lopez20143}.\\
 
+\textbf{DSSAT}: (Sistema de Apoyo de Decisiones para la Transferencia de la Agrotecnología). Desde 1983, un grupo internacional de científicos cooperantes han desarrollado modelos de simulación de cultivos, enfocados a proporcionar estimaciones realistas del comportamiento de los cultivos bajo diferentes estrategias de manejo y condiciones ambientales. Estos modelos se han combinado en un paquete, como parte de un programa de enlaces (software shell) conocido como Sistema de Apoyo para Decisiones de Transferencia de Agrotecnología (DSSAT, por sus siglas en inglés) \parencite{jones1998decision}.
+Los modelos de simulación de cultivos del DSSAT utilizan archivos de datos para clima, suelo y manejo del cultivo. Estos archivos se utilizan para proveer en la simulación un ambiente parecido a donde crece el cultivo. El DSSAT, además, incluye varios programas de aplicación para análisis estacionales \parencite{thornton1994computer}, rotación de cultivo y análisis secuencial \parencite{thornton1995computer}, y análisis espacial a escala de campo o regional \parencite{engel1997aegis, thornton1997computer}. Los modelos proveen una de las mejores aproximaciones del comportamiento de los cultivos, integrando nuestro entendimiento de los procesos complejos de las plantas influenciados por el clima, el suelo y las condiciones de manejo \parencite{white2003gene}.
+El modelo DSSAT ha sido usado por investigadores de todo el mundo en los últimos 15 años; este paquete tiene incorporado 16 modelos de cultivos diferentes, con un software que facilita la evaluación y aplicación de estos modelos de cultivos para diferentes propósitos \parencite{jones2003dssat}. Estos permiten simular el crecimiento de cultivos de importancia económica y han demostrado alta confiabilidad en distintas condiciones de clima, suelo y manejo \parencite{jones1993decision}. Con este modelo es posible organizar y archivar bases de datos sobre clima, suelos, cultivos, experimentos y precios; simular producciones de cultivo en una o varias épocas y en secuencias; analizar resultados y representar gráficamente simulaciones; analizar variabilidad espacial y evaluar diferentes prácticas de manejo específicas a una explotación o parte de ella \parencite{giraldo2007adaptacion}.\\
 
+\textbf{UNSAT}: El software UnSat Suite Plus combina los modelos HELP, PESTAN, SESOIL, VLEACH y VS2DT en un nuevo ambiente gráfico de gran alcance, diseñado específicamente para simular el flujo del agua subterránea y el transporte unidimensional del contaminante con la zona no saturada. Este modelo unidimensional simula el flujo vertical descendente de aguas subterráneas, así como la migración de contaminantes disueltos en aguas subterráneas, a través de una fina columna de suelo.
 
+El paquete de software UnSat Suite Plus incluye numerosas herramientas y elementos de diseño que le permitirán producir simulaciones de flujo profesionales. Las funciones de este producto incluyen:
 
+\begin{itemize}
+	\item Entorno de modelado unificado.
+	\item Nuevo asistente de proyectos.
+	\item Gestión de proyectos.
+	\item Datos de entrada.
+	\item Visualización gráfica.
+	\item Enlaces de la base de datos.
+	\item SWS Weather Generator.
+	\item Integración perfecta.
+	\item Presentación de resultados.
+	\item Generador de informes automático.
+\end{itemize}
 
+Las funciones de simulación se posibilitan gracias a la integración de 5 modelos diferentes dentro del software de UnSat Suite plus. Estos modelos que se integran son:
+\begin{itemize}
+	\item HELP, es un modelo aplicable a los procesos hidrológicos de taludes, terraplenes, desmontes, laderas modificadas, etc., permitiendo comprobar la estabilidad, viabilidad y correcto diseño del mismo. También es eficaz en el cálculo del valor de la recarga del agua subterránea.
+	\item PESTAN (PESTticide ANalítico), es un modelo analítico de pesticidas, que utiliza una solución analítica para predecir el transporte de solutos orgánicos con la zona no saturada a la tabla del agua subterránea. Resulta útil para evaluar el potencial para la contaminación del agua subterránea por los pesticidas usados en usos agrícolas, así como impactos potenciales del agua subterránea de cualquier soluto orgánico que emigra con la zona no saturada.
+	\item SESOIL (Flujo estacional y modelo de transporte para la zona de SUELO insaturada), es un modelo capaz de simular, simultáneamente, el movimiento del agua, transporte de sedimento y el agente contaminante en el terreno. Se utiliza para la investigación en el transporte del contaminante, el lavado del mismo, volatilización y difusión en el aire de la parte volátil, así como los fenómenos de absorción, volatilización, degradación, intercambio catiónico, hidrólisis y complejación del metal.
+	\item VLEACH (Modelo de lixiviación de zonas no saturadas), es un modelo de la lixiviación unidimensional de la zona no saturada, mediante un modelo de diferencias finitas, el cual predice el movimiento y migración vertical de contaminantes orgánicos en la zona no saturada. Esto permite evaluar los daños en el agua subterránea debido a la migración vertical del contaminante por la zona no saturada y predecir la volatilización en la subsuperficie de los posibles volátiles.
+	\item VS2DT (Modelo de transporte y flujo en 2D variablemente saturado), es un modelo numérico de diferencias finitas para flujo de estado estacionario o transitorio. Los usos típicos del modelo de VS2DT incluyen la determinación el sino de productos químicos agrícolas, lavado del terraplén, fugas y vertidos accidentales de productos químicos, mientras que emigran con la zona no saturada hacia la zona saturada del acuífero.
+\end{itemize}
 
+Cuenta con las siguientes aplicaciones: simular el transporte y el destino a largo plazo de contaminantes (COV, HAP, pesticidas y metales pesados) en la zona insaturada con condiciones variables en función de la estación utilizando SESOIL; predecir la migración vertical de los hidrocarburos volátiles a través de la zona vadosa con condiciones de flujo de estado permanente utilizando VLEACH; calcular la migración de pesticidas agrícolas a través de zonas insaturadas con condiciones de flujo de estado permanente utilizando PESTAN; simular el flujo de aguas subterráneas y los procesos de transporte de contaminantes a través de suelos insaturados heterogéneos con condiciones de flujo variable utilizando VS2DT; generar hasta 100 años de datos climatológicos estadísticamente fiables, para prácticamente cualquier lugar del mundo utilizando SWS Weather Generator. \parencite{noauthor_unsat_nodate}\\
 
+\textbf{DRAINMOD}: Es un modelo de simulación por ordenador desarrollado por el Dr. Wayne Skaggs en el Departamento de Ingeniería Biológica y Agrícola de la Universidad Estatal de Carolina del Norte, en Raleigh, Carolina del Norte, en 1980. Simula la hidrología de los suelos mal drenados y con alto nivel freático hora a hora y día a día durante largos períodos de registro climatológico (por ejemplo, 50 años). Además, predice los efectos del drenaje y de las prácticas de gestión del agua asociadas en las profundidades del nivel freático, el régimen hídrico del suelo y el rendimiento de los cultivos. Parallel Ditches, se ha utilizado para analizar la hidrología de ciertos tipos de humedales y para determinar si se cumple el criterio hidrológico de los humedales en los lugares drenados o parcialmente drenados. Este modelo también se utiliza para determinar la capacidad hidráulica de los sistemas de tratamiento terrestre de las aguas residuales. Ha sido probado y aplicado con éxito en una gran variedad de condiciones geográficas y de suelo. En los últimos 20 años, la capacidad del modelo se ha ampliado para predecir los efectos de las prácticas de drenaje y gestión del agua en la hidrología y la calidad del agua de las tierras agrícolas y forestales, tanto a escala de campo como de cuenca.
 
+La última versión, DRAINMOD 6.0, combina el modelo hidrológico original DRAINMOD con DRAINMOD-N (submodelo de nitrógeno) y DRAINMOD-S (submodelo de salinidad) en un programa basado en Windows. La nueva versión incluye una interfaz gráfica de usuario que permite preparar fácilmente los conjuntos de datos de entrada, ejecutar simulaciones y visualizar los resultados del modelo. Además de organizar los componentes de hidrología, nitrógeno y salinidad de DRAINMOD, la interfaz facilita el análisis del efecto del diseño del sistema de drenaje en el drenaje subsuperficial, la escorrentía superficial, el SEW30, el rendimiento de los cultivos y la pérdida de nitrógeno en el drenaje superficial y subsuperficial, editando automáticamente los parámetros de diseño del drenaje (por ejemplo, el espaciado y la profundidad del drenaje) en un rango especificado, simulando los diferentes diseños y mostrando gráficamente los resultados. La interfaz también calcula el volumen de escorrentía de las áreas circundantes que drenan a un sitio y añade ese volumen de escorrentía a un balance hídrico DRAINMOD del sitio. La versión 6.0 también incluye rutinas para la modelización de la temperatura del suelo y considera los efectos de la congelación y descongelación en los procesos de drenaje. \parencite{noauthor_drainmod_nodate}\\
 
+\textbf{SWAT}: Es un modelo de simulación de dominio público que se aplica sobre GIS para usos en cuencas. El complemento SWAT es una herramienta de evaluación de suelo y agua para el manejo de cuencas.
 
+Se utiliza para la predicción de efectos del uso y manejo de la tierra en la producción de sedimentos, agua y químicos en cuencas hidrográficas, especialmente en cuencas sin historia de monitoreo. También se usa en cuencas grandes y complejas con variedad de suelos, usos de suelo, tipo de tierra y condiciones de manejo sobre un tiempo de simulación prolongado. 
 
+Originalmente SWAT fue desarrollado a inicios de los 90 por el Servicio de Investigación en Agricultura (ARS) del Departamento de Agricultura de los Estados Unidos (USDA) como modelo a escala, y es ampliamente utilizado en manejo de cuencas. Actualmente es soportado por el USDA-ARS y la Texas A\&M AgriLife Research, parte de la Universidad de Texas A\&M.
+
+Este complemento nos permite simular cuencas para determinar los impactos en un plazo establecido contando con múltiples variables . En general cuando se usa este complemento se siguen estos 4 pasos:
+\begin{enumerate}
+	\item Delineación de la cuenca.
+	\item Creación Unidades Hidrológicas de Respuesta (HRU’s).
+	\item Establecer y correr SWAT.
+	\item Visualizar los resultados.
+\end{enumerate}
+Sin embargo se puede considerar la preparación de las base de datos como el paso “0” (cero) debido a que tener los datos de la región en estudio es crucial para focalizar nuestros análisis, creando así un nuevo archivo con la estructura y organización dada por SWAT, que originalmente viene con la base de datos para Estados Unidos.
+
+Este modelo SWAT requiere para una mayor precisión en la simulación, una diversidad de información como datos espaciales de Suelo, Relieve, Uso de suelo, Cobertura de suelo y Datos de elevación, siendo los principales elementos para la modelación los siguientes: clima, intercepción, infiltración, evapotranspiración, flujo lateral subsuperficial, escorrentía superficial, estanques, canales tributarios, flujo de retorno, crecimiento de plantas y cobertura, erosión, nutrientes, pesticidas, manejo agrícola, tránsito hidrológico y tránsito en reservorios. \parencite{noauthor_conoce_nodate}\\
+
+\textbf{CERES}: Los modelos de la familia CERES que están incluidos dentro del paquete DSSAT, simulan el comportamiento de cereales, y han probado su aptitud para ser utilizados en regiones de la Argentina en cultivos como maíz o cebada. El modelo CERES trigo, que simula el cultivo de trigo, ha sido validado en varios países en condiciones experimentales.\parencite{salvagiotti2003modelo}\\
+
+\textbf{WOFOST}: (Estudios de Alimentación Mundiales – WOrld FOod STdudies) es un modelo de simulación para el análisis cuantitativo del crecimiento y la producción de los cultivos anuales.
+Se trata de un modelo mecanicista y dinámico que explica el crecimiento diario de los cultivos a partir de los procesos subyacentes, como la fotosíntesis, la respiración y la forma en que estos procesos se ven influenciados por las condiciones ambientales.
+
+Con WOFOST se puede calcular la producción alcanzable de los cultivos, la biomasa, el uso del agua, etc., para un lugar dados los conocimientos sobre el suelo, el cultivo, el clima y la gestión del cultivo (por ejemplo, la fecha de siembra). Ha sido utilizado por muchos investigadores en todo el mundo y se ha aplicado a muchos cultivos en una amplia gama de condiciones climáticas y de gestión. Es uno de los componentes clave del sistema europeo de previsión del rendimiento de los cultivos MARS. En el Global Yield Gap Atlas (GYGA), WOFOST se utiliza para estimar el potencial de producción de cultivos sin explotar en las tierras de cultivo existentes, basándose en el clima actual y en los recursos de suelo y agua disponibles.
+
+Se originó en el marco de los estudios interdisciplinarios sobre la seguridad alimentaria mundial y sobre el potencial de producción de alimentos en el mundo realizados por el Centro de Estudios Alimentarios Mundiales (CWFS) en cooperación con la Universidad e Investigación de Wageningen, el Departamento de Ecología de la Producción Teórica (WAU-TPE) y el Centro DLO de Investigación Agrobiológica y Fertilidad del Suelo (AB-DLO), Wageningen, Países Bajos. Tras el cese del CWFS en 1988, el Centro Winand Staring de DLO (SC-DLO) ha continuado el desarrollo del modelo en cooperación con AB-DLO y WAU-TPE. 
+
+En la actualidad, el modelo WOFOST es mantenido y desarrollado por Wageningen Environmental Research en cooperación con el Grupo de Sistemas de Producción Vegetal de la Universidad e Investigación de Wageningen y la unidad de Seguridad Alimentaria del Centro Común de Investigación de Italia. \parencite{form_wofost_2019}
+
+WOFOST \parencite{van1989wofost} considera limitaciones de N, P y K en el crecimiento vegetal. Sin embargo, no considera los efectos tóxicos del alto contenido salino y/o de aluminio del suelo. Ninguno de los modelos actualmente existentes tienen en cuenta la degradación física de los suelos afectados por los altos niveles del sodio y su impacto en el desarrollo de la cosecha \parencite{de2005modeling}.
+
+WCC (WOFOST Control Centre 1.5) facilita la selección de los ficheros correspondientes al clima, cultivos y suelo, así como el tratamiento y visualización de los datos resultantes de la simulación. \parencite{sebem2005aportaciones} \\
+
+Existen otros modelos importantes como: \parencite{hernandez2009modelos}
+\begin{itemize}
+	\item SLAMII: Operaciones de cosecha de forraje.
+	\item SPICE: Plantas completas de flujo de agua.
+	\item REALSOY: Frijol de soya.
+	\item IRRÍGATE: Modelo de planeamiento de irrigación.
+	\item COTTAM: Algodón.
+	\item APSIM: Estructura de modelación para un rango de cultivos.
+	\item GWM: Modelo general de hierba mala en los surcos de cultivo.
+	\item CropSyst: Trigo y otros cultivos.
+	\item SIMCOM: Cultivo (módulos de CERES) y economía.
+	\item LUPINMOD: Lupino.
+	\item TUBERPRO: Patatas y enfermedades.
+	\item SIMPOTATO: Patatas.
+	\item WAVE: Agua y agroquímicos.
+	\item SUCROS: Modelos de cultivos.
+	\item ORYZA1: Arroz, agua.
+	\item SIMRIW: Arroz, agua.
+	\item SIMCOY: Maíz.
+	\item CERES-Rice: Arroz, agua.
+	\item GRAZPLAN: Pastos, agua, corderos.
+	\item EPIC: Calculador del impacto de la erosión en la productividad.
+	\item QCANE: Caña de azúcar, condiciones potenciales.
+	\item APSIM-Sugarcane: Caña azúcar, crecimiento potencial, agua y estrés nitrógeno.
+\end{itemize}
 
 
 
