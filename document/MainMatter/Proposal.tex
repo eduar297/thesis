@@ -126,3 +126,72 @@ Los procesos que afectan directamente al contenido en agua del suelo radicular (
 \end{figure}
 
 El contenido en agua de la zona radicular se obtiene a partir del cálculo diario del balance hídrico. En WOFOST se distinguen tres diferentes submodelos de agua en el suelo. Aunque WOFOST admite tres tipos de cálculos distintos del balance hídrico, el WOFOST de CGMS sólo considera los dos primeros sub-modelos, el tercero no es operativo por no disponer al pF del suelo.
+\begin{enumerate}
+	\item Cálculo del balance hídrico del suelo para la producción potencial: El más simple de los balances se aplica para simular la producción potencial. Se considera que la planta crece sin estrés hídrico asumiendo que el suelo está permanentemente a capacidad de campo, de modo que:
+	\begin{align*}
+		&\theta_t=\theta_{fc} \\
+		&\text{donde: } \\
+		&\theta_t  \Rightarrow \text{ contenido real del agua del suelo [$ cm^3 \; cm^{-3} $] } \\
+		&\theta_{fc}  \Rightarrow \text{ contenido a capacidad del campo [$ cm^3 |; cm^{-3} $] } \\
+	\end{align*}
+	En los cálculos no se tienen en cuenta la precipitación, irrigación, ascensión capilar y el drenaje, aunque estos procesos puedan ocurrir. Los únicos dos procesos que se consideran son la transpiración del cultivo y evaporación del suelo.
+	
+	La tasa de evaporación para la mayoría de los cultivos (cultivos sin conductos de aire en las raíces y que no soportan el encharcamiento) se calcula como la tasa de evaporación de la superficie del suelo:
+	\begin{align*}
+		&E_s=E_{s,max}\frac{\theta_{fc}-\frac{\theta_{wp}}{3}}{\theta_{max}-\frac{\theta_{wp}}{3}} \\
+		&\text{donde: } \\
+		&E_s  \Rightarrow \text{ tasa de evaporación de la superficie de suelo sombreada [$ cm \; d^{-1} $] } \\
+		&E_{s,max}  \Rightarrow \text{ tasa de evaporación máxima de la superficie de suelo sombreada [$ cm \; d^{-1} $] } \\
+		&\theta_{wp}  \Rightarrow \text{ contenido en agua en el punto de marchites [$ cm^3 \; cm^{-3} $] } \\
+		&\theta_{max}  \Rightarrow \text{ porosidad del suelo [$ cm^3 \; cm^{-3} $] } \\
+		&\text{Calculándose la máxima tasa de evaporación de la superficie de suelo sombreado como: } \\
+		&E_{s,max}=EO_se^{-k_{gb}LAI} \\
+		&\text{donde: } \\
+		&EO_s  \Rightarrow \text{ tasa de evaporación potencial de la superficie de un suelo desnudo [$ cm \; d^{-1} $] } \\
+		&k_{gb}  \Rightarrow \text{ coeficiente de extinción para la radiación global total [$ - $] } \\
+		&LAI  \Rightarrow \text{ índice de área foliar [$ ha \; ha^{-1} $] } \\
+	\end{align*}
+	\item Cálculo del balance hídrico del suelo cuando no se considera la capa freática: El segundo sub-modelo para la situación de producción con limitaciones de agua se aplica a un suelo que drena libremente, la capa freática es tan profunda que no influye en el contenido de agua de la zona radicular. 
+	
+	Para la zona de enraizamiento se calcula diariamente la ecuación del balance hídrico. El balance hídrico es impulsado por la precipitación y la evapotranspiración. Los procesos considerados son la infiltración, retención de agua en el suelo, percolación y pérdida de agua por debajo de la zona radicular máxima. El agua puede retenerse en el suelo hasta el contenido de la capacidad de campo. Se distinguen en el suelo tres zonas:
+	\begin{enumerate}
+		\item zona de enraizamiento, entre la superficie y la profundidad real de las raíces.
+		\item zona inferior, entre la profundidad real de enraizamiento y la máxima.
+		\item subsuelo, por debajo de la profundidad máxima.
+	\end{enumerate}
+	\item Cálculo del balance hídrico del suelo cuando se considera la capa freática: El tercer sub-modelo se aplica para calcular la producción con limitación de agua en suelos que tienen la influencia de una capa freática poco profunda en la zona radicular. La diferencia con respecto al segundo submodelo es que la capacidad de retención del agua en el suelo está determinada por la profundidad de la capa freática, es decir, la tasa de percolación.
+	
+	Aunque las simulaciones se llevan a cabo mediante CGMS también se ha utilizado el modelo de simulación WOFOST 7.1 con la utilidad WCC (WOFOST Control Centre 1.5). WCC facilita la selección de los ficheros correspondientes al clima, cultivos y suelo así como el tratamiento y visualización de los datos resultantes de la simulación. 
+	
+	Existe la opción de realizar varias simulaciones a la vez (rerun) cambiando algunos de los parámetros con el objeto de estudiar el cambio de las variables simuladas. 
+	
+	Mediante WOFOST se pueden obtener distintos tipos de resultados: 
+	\begin{enumerate}
+		\item \textbf{Potenciales}. Producción potencial del cultivo: (IDSEM) Número de días desde la nascencia (d); (DVS) Estado de desarrollo del cultivo (-); (TSUM) Tiempo térmico desde la nascencia (ºC d); (WLV) Peso seco de las hojas vivas (k ha); (WST) Peso seco de las tallos vivas (k ha); (WSO) Peso seco de las órganos de reserva vivos (k ha); (TAGP) Producción total sobre el suelo (órganos vivos y muertos) (k ha); (LAI) Índice de Área Foliar (área foliar/superficie del suelo) (ha/ha); (TRA) Tasa de transpiración (mm/d); (GASS) Tasa de asimilación bruta (mm/d); (MRES) Tasa de respiración de mantenimiento (mm/d); (DMI) Incremento de la tasa de materia seca (k/ha d). 
+		\item\textbf{ Con limitación de agua}. Producción con limitación de agua: (WLV) Peso seco de las hojas vivas (k ha); (WST) Peso seco de las tallos vivas (k ha); (WSO) Peso seco de las órganos de reserva vivos (k ha); (TAGP) Producción total sobre el suelo (órganos vivos y muertos) (k ha); (LAI) Índice de Área Foliar (área foliar/superficie del suelo) (ha/ha), (RD) Profundidad de la zona de enraizamiento real (cm); (SM) Contenido de agua en el suelo en la zona de enraizamiento real (cm3 agua/cm3 suelo); (RESRV) Agua del suelo disponible en la zona de enraizamiento potencial (en y por debajo de la zona de enraizamiento real) (cm suelo); (AVAIL) Agua disponible en la zona de enraizamiento real (cm agua) Sólo cuando se simula sin la influencia de agua subterránea); (RAIN) Precipitación total en el período de simulación (mm); (TRA) Tasa de transpiración (mm/d); (EVA(P)) Tasa de evaporación desde el suelo o del agua almacenada en la superficie del suelo (mm/d); (SS) Superficie de almacenamiento (cm agua); (ZT) Profundidad de la capa freática (cm por debajo de la superficie del suelo); (wet) Días caracterizados por un crecimiento reducido debido a la falta de oxígeno (d); (dry) Días caracterizados por un crecimiento reducido debido a la falta de agua (d). 
+		\item\textbf{ Con limitación de nutrientes}. Producción con limitación de nutrientes: Este caso no va a ser considerado en los procesos de simulación que van a llevarse a cabo ya que no se dispone de los datos. 
+		\item\textbf{ Balance hídrico}. Los resultados de balance hídrico se obtienen tanto para todo el sistema como para la zona radicular. Para todo el sistema los resultados que obtenemos son: (1) Contenido de agua inicial y final y su diferencia (bien para la zona radicular máxima o para los 10 primeros cm cuando consideramos la influencia del agua del suelo); (2) Superficie de almacenamiento de agua inicial y final y su diferencia; (3) Precipitación; (4) Evaporación (del suelo o la superficie de agua) y transpiración (del cultivo); juntos son pérdida de agua a la atmósfera y (5) Agua de escorrentía, percolación al agua del terreno y pérdida de agua debida al drenaje (cuando hay agua freática).
+		
+		Los resultados del balance hídrico en la zona radicular comprende los siguientes datos: (1) Contenido de agua inicial y final y su diferencia en la zona radicular; (2) Infiltración a la zona radicular (ejemplo, precipitación menos escorrentía); (3) Evaporación (del suelo) y transpiración (del cultivo); (4) Incremento del agua disponible debido al crecimiento radicular; (5) Percolación al agua del suelo y (6) Aumento de la capilaridad (cuando existe agua freática).
+		
+		\item Resultados resumidos: WCC resume en un fichero las variables de salida para los distintos años, así como los datos estadísticos (media, desviación típica y coeficiente de variación) de todos los años.
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
