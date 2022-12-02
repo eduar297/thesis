@@ -15,6 +15,15 @@
 \usepackage{multicol}
 \usepackage{graphicx}
 
+\newcommand\pythonstyle{\lstset{
+		language=Python
+}}
+\lstnewenvironment{python}[1][]{
+	\pythonstyle
+	\lstset{#1}
+}{}
+
+
 \floatstyle{plaintop}
 \restylefloat{table}
 \bibliography{Bibliography}
@@ -50,12 +59,13 @@
 
 \lstset{style=mystyle}
 
-\title{Modelación de cultivos mediante el empleo de los filtros de partículas para la generación y selección de las mejores trayectoria de estados del cultivo.}
+\title{Modelación y simulación de cultivos con el modelo WOFOST. Desarrollo de una interfaz de usuario.}
 \author{\\\vspace{0.25cm}Eduardo Moreira González}
-\advisor{\\\vspace{0.25cm}Jorge Díaz Suárez\\\vspace{0.2cm}Edel García Reyes }
+\advisor{\\\vspace{0.25cm}Jorge Díaz Suárez}
+\coadvisor{\\\vspace{0.25cm}Edel García Reyes}
 \degree{Licenciado en Ciencia de la Computación}
 \faculty{Facultad de Matemática y Computación}
-\date{Fecha\\\vspace{0.25cm}\href{https://github.com/eduar297/thesis}{github.com/eduar297/thesis}}
+\date{Diciembre, 2022\\\vspace{0.25cm}\href{https://github.com/eduar297/thesis}{github.com/eduar297/thesis}}
 \logo{Graphics/uhlogo}
 \makenomenclature
 

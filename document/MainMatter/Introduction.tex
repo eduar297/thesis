@@ -3,7 +3,7 @@
 
 En Cuba uno de los sectores mas importantes es la agricultura. Su importancia radica en la necesidad de disminuir el déficit alimentario, fomentar la exportación como fuente de ingreso económica, emplear gran cantidad de trabajadores, entre otros. Sin embargo, muchas son las causas que han impedido que dicho sector alcance su máximo rendimiento; entre estas podemos citar el bloqueo económico impuesto por los Estados Unidos a nuestro país que ha imposibilitado la adquisición de maquinarias, fertilizantes, entre otras tecnologías usadas en la mayoría de los países agrícolas; la alta demanda alimenticia de la población, que a pesar de los grandes esfuerzos realizados por cumplir, en ocasiones es complicado satisfacer; las condiciones del clima que se han acuciado debido al impacto del cambio climático no solo en nuestro país, sino en el mundo.
 
-Debido a lo expuesto anteriormente, se necesita recurrir a nuevos métodos capaces de reconocer las complejidades de naturaleza física, químicas, biológicas, así como también sociales, económicas, políticas y culturales.
+Debido a lo expuesto anteriormente, se necesita recurrir a nuevos métodos capaces de reconocer las complejidades de la naturaleza física, químicas, biológicas, así como también sociales, económicas, políticas y culturales.
 
 El método Análisis de Sistemas o Investigación de Sistemas (\textit{System Analysis} o \textit{System Research}) garantiza una mejor comprensión de los conceptos básicos y a su vez los organiza en un marco cuantitativo y dinámico.
 
@@ -17,7 +17,8 @@ Una de las motivaciones fundamentales para el desarrollo de este proyecto cient�
 
 
 \section*{Problema}
-A pesar de en los últimos años se ha implementado en nuestro país la modelación de cultivos, esta tecnología aun no es ampliamente conocida por todos. Muchos agricultores que podrían beneficiarse de esta no lo hacen por desconocimiento. Por esa razón el principal problema que se pretende resolver con este trabajo de investigación es cómo mejorar los modelos de simulación utilizados en Cuba y cómo hacer llegar esta tecnología de una forma mas fácil e intuitiva a los agricultores.
+Hace más de 25 años se trabaja con la modelación y simulación de cultivos en nuestro país. Sin embargo, no es necesario que todos conozcan esta tecnología, ya que a pesar de que brinda muchos beneficios para la sociedad, debe ser manejada por especialistas que sean capaces de trabajar con datos correctos y que respondan a una realidad determinada. 
+Por esta razón el principal problema que se pretende resolver con esta investigación es la falta de herramientas intuitivas de especialistas en el campo para poder manejar simulaciones de cultivos con diferentes técnicas.
 
 \section*{Hipótesis}
 TODO...
@@ -26,15 +27,13 @@ TODO...
 TODO...
 
 \section*{Objetivo}
-Para resolver el problema planteado anteriormente, el objetivo general de la tesis es la modelación de cultivos mediante el empleo de los filtros de partículas para la generación y selección de las mejores trayectorias de estados del cultivo y la implementación de una interfaz visual para el fácil manejo por los usuarios.
+Para resolver el problema planteado anteriormente, el objetivo general de la tesis es propiciar una herramienta para expertos que facilite la modelación y simulación de cultivos así como la visualización y el manejo de datos.
+
 Los objetivos específicos que se persiguen con la investigación son:
 
 \begin{itemize}
-	\item Proponer un algoritmos para la creación de poblaciones de trayectorias o partículas.
-	\item Desarrollar un método para la selección de trayectorias basado en el filtro de partículas y los índices de área foliar.
-	\item Implementar un algoritmos para la extrapolación de las trayectorias de los estados del cultivo.
 	\item Proponer un algoritmo para la estimación del rendimiento a partir de las trayectorias simuladas de los estados del cultivo
-	\item Creación de una aplicación web usando las tecnologías React + Typescript en el frontend y Python + Flask + Flask-Restfull + PCSE (Python Crop Simulation Environment) en el backend.
+	\item Creación de una aplicación web para el manejo de datos, su visualización mediante distintos tipos de gráficas y tablas.
 \end{itemize}
 
 \section*{Campo de acción}
@@ -47,34 +46,28 @@ Para alcanzar este objetivo se responderán las siguientes preguntas científica
 
 \begin{enumerate}
 	\item ¿Cuáles son las bases teóricas necesarias para llevar a cabo el análisis?
-	\item ¿Cómo se implementa un filtro de partículas?
-	\item ¿Cómo se implementa la estrategia de selección de trayectorias basada en el filtro de partícula y el Índice de Área Foliar?
-	\item ¿Cómo programar un modelo para la extrapolación de las trayectorias de los estados del cultivo?
-	\item ¿Cómo programar un algoritmo para la estimación de rendimiento del cultivo basado en las trayectorias seleccionadas y extrapoladas?
-	\item ¿Cómo implementar una aplicación web que sea intuitiva y fácil de usar por los usuarios?
+	\item ¿Cómo programar un algoritmo para la estimación de rendimiento del cultivo basado en parámetros propiciados por un especialista?
+	\item ¿Cómo corregir el modelo mediante la retroalimentación para lograr predecir con una mayor exactitud el rendimiento del cultivo en cuestión?
+	\item ¿Cómo implementar una aplicación web que sea intuitiva y fácil de usar por expertos?
 \end{enumerate}
 
 \section*{Tareas}
 \begin{itemize}
-	\item Investigar sobre la bibliografía necesaria para llevar a cabo la investigación.
-	\item Analizar críticamente la bibliografía seleccionada.
+	\item Investigación sobre la bibliografía necesaria para llevar a cabo la investigación.
+	\item Análisis críticamente la bibliografía seleccionada.
 	\item Estudio de las especificaciones y características de los modelos de simulación de cultivos.
-	\item Búsqueda y selección de implementaciones computacionales de los modelos de cultivo, en especial en lenguaje Python.
-	\item Estudio de los fundamentos teóricos y computacionales de los filtros de partícula.
-	\item Programar un método para la codificación de trayectoria y la generación de una población de trayectorias.
-	\item Programación de la estrategia de selección de trayectorias basada en el filtro de partícula y el Índice de Área Foliar.
-	\item Programar un modelo para la extrapolación de las trayectorias de los estados del cultivo.
-	\item Programar un algoritmo para la estimación de rendimiento del cultivo basado en las trayectorias seleccionadas y extrapoladas.
-	\item Realizar experimentos de visualización de los resultados de la modelación en cultivos de campos de arroz o caña de azúcar.
+	\item Búsqueda y selección de implementaciones computacionales de los modelos de cultivo, en especial en el lenguaje de programación Python.
+	\item Corrección el modelo seleccionado modificando en tiempo real ciertos parámetros como el índice de área foliar simulado en concordancia con el valor real calculado. 
+	\item Programación un algoritmo para la estimación de rendimiento del cultivo.
 	\item Desarrollo de una aplicación web para el manejo y visualización de los datos.
-	\item Presentar los resultados de la investigación.
+	\item Presentación de los resultados de la investigación.
 \end{itemize}
 
 \section*{Métodos}
 TODO...
 
 \section*{Novedad e importancia práctica}
-En los últimos años y gracias al desarrollo tecnológico, ha sido posible predecir las condiciones de determinado cultivo sin usar innecesariamente recursos como agua, fertilizantes o tiempo, gracias a la simulación de cultivos. Dado que esta es una tecnología muy útil, pero en cierta medida poco conocida por su novedad,  una mejora como esta podría facilitar su entendimiento y alcance, no solo por organizaciones y entidades sino también por los agricultores no expertos, que podrían beneficiarse grandemente sin tener conocimientos sobre esta. Además, este trabajo de investigación podría ser usado como referencia para futuras investigaciones en este campo.
+En los últimos años y gracias al desarrollo tecnológico, ha sido posible predecir las condiciones de determinado cultivo sin usar innecesariamente recursos como agua, fertilizantes o tiempo, gracias a la simulación de cultivos. Dado que esta es una tecnología muy útil, pero en cierta medida poco conocida, una mejora como esta podría facilitar su entendimiento y alcance a organizaciones, entidades y expertos en el área de la agricultura que desconozcan cómo programar estos modelos, centrándolos solo en recuperar toda la información necesaria para poder llevar a cabo la simulación mediante una intuitiva interfaz visual. Además, este trabajo de investigación podría ser usado como referencia para futuras investigaciones en este campo.
 
 \section*{Estructura}
-El informe de la investigación está estructurado en 3 capítulos. En el capítulo \ref{chapter:state-of-the-art} (Estado del Arte), se analiza el marco teórico, es decir, toda la teoría y conceptos necesarios para comprender y llevar a cabo la investigación, así como los antecedentes del campo de la modelación y simulación. En el capítulo 2 (Propuesta), se da a conocer la proposición que se hizo para resolver el problema planteado. Por último pero no menos importante, en el capítulo 3 (Detalles de Implementación y Experimentos), se explica la parte práctica de la investigación, así como los resultas obtenidos al concluir esta.
+El informe de la investigación está estructurado en 3 capítulos. En el capítulo \ref{chapter:state-of-the-art} (Estado del Arte), se analiza el marco teórico, es decir, toda la teoría y conceptos necesarios para comprender y llevar a cabo la investigación, así como los antecedentes del campo de la modelación y simulación. En el capítulo 2 (Propuesta), se da a conocer la proposición que se hizo para resolver el problema planteado. Por último pero no menos importante, en el capítulo 3 (Detalles de Implementación y Experimentos), se explica la parte práctica de la investigación, así como los resultados obtenidos al concluir esta.

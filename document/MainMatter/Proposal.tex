@@ -4,7 +4,7 @@
 
 Para la realización de esta investigación, se decidió utilizar el modelo \textbf{WOFOST} como principal modelo de simulación de cultivos; por esta razón se profundizará sobre este tema en esta sección. Además, se explicará en detalle por qué se decidió elegir este específicamente.\\
 
-Según \parencite{sebem2005aportaciones}, el modelo WOFOST tiene como principal objetivo estimar los valores de las variables biológicas (rendimiento de los órganos de almacenamiento y biomasa total) a utilizar como explicativas en el marco de CGMS, con vistas a la predicción del rendimiento. Además, el modelo WOFOST tiene otras utilidades como puede ser el estudio del comportamiento del cultivo y su rendimiento bajo diversas condiciones del medio (distintos tipos de suelo, condiciones hídricas, cambio climático) o ante distintas estrategias de cultivo (uso de fertilizantes, distintas fechas de siembra).
+Según \parencite{sebem2005aportaciones}, el modelo WOFOST tiene como principal objetivo estimar los valores de las variables biológicas (rendimiento de los órganos de almacenamiento y biomasa total) a utilizar como explicativas en el marco de CGMS (Crop Growth Simulation Model en combinación con Geographic Information System), con vistas a la predicción del rendimiento. Además, el modelo WOFOST tiene otras utilidades como puede ser el estudio del comportamiento del cultivo y su rendimiento bajo diversas condiciones del medio (distintos tipos de suelo, condiciones hídricas, cambio climático) o ante distintas estrategias de cultivo (uso de fertilizantes, distintas fechas de siembra).
 
 El objetivo de WOFOST es estimar las variables biológicas: rendimiento de los órganos de almacenamiento y biomasa total potenciales y con limitación de agua. El rendimiento potencial se determina mediante las propiedades genéticas del cultivo, la radiación solar, el régimen de temperatura y la fecha de siembra, e indica la producción máxima que el cultivo puede alcanzar cuando existen unas condiciones hídricas óptimas en el suelo. El rendimiento limitado por el agua del suelo depende de la reserva natural de agua e incluye los efectos de la falta de agua.\\
 
@@ -17,7 +17,7 @@ Simula el desarrollo, crecimiento y rendimiento de un cultivo en función de las
 	&\Delta W = C_e(A-R_m) \\
 	&\text{donde: } \\
 	&\Delta W \Rightarrow \text{ tasa de crecimiento (kg materia seca / ha, día)} \\
-	&C_e  \Rightarrow \text{eficacia de conversión de los asimilados (kg materia seca / kg $ CH_2O $) } \\
+	&C_e  \Rightarrow \text{eficacia de conversión de los asimilados (kg materia seca / kg $ CH_2O $ (Formaldehído)) } \\
 	&A \Rightarrow \text{tasa bruta de asimilación (kg $ CH_2O $ / ha, día)} \\
 	&R_m \Rightarrow \text{tasa de respiración de mantenimiento  (kg $ CH_2O $ / ha, día)}
 \end{align*}
@@ -75,7 +75,7 @@ Los procesos que son simulados en el sistema pueden reagruparse en:
 		& rt \Rightarrow \text{raíces}
 	\end{align*}
 	
-	Para poder hacer girar el modelo son necesarios, para cada cultivo, una numerosa seria de parámetros que se determinan empíricamente, por ejemplo para estimar la fecha de emergencia es necesario conocer la suma de temperaturas medias diarias (TSUMEN) que se considera estiman el tiempo transcurrido entre la siembra y la nascencia del cultivo, estas temperaturas medias deben superar una temperatura base (TBASEM) y sin sobrepasar un incremento máximo diario (TEFFMX). 
+	Para poder hacer funcionar el modelo son necesarios, para cada cultivo, una numerosa serie de parámetros que se determinan empíricamente, por ejemplo para estimar la fecha de emergencia es necesario conocer la suma de temperaturas medias diarias (TSUMEN) que se considera estiman el tiempo transcurrido entre la siembra y la nascencia del cultivo, estas temperaturas medias deben superar una temperatura base (TBASEM) y sin sobrepasar un incremento máximo diario (TEFFMX). 
 	
 \end{enumerate}
 
@@ -93,7 +93,7 @@ El contenido real del agua en el suelo puede estimarse mediante la ecuación:
 	&IN_{up}=P+I_e-E_s+SS_t/\Delta t - SR \\
 	&IN_{low}=CR-Perc \\
 	&\text{donde: } \\
-	&\theta_t  \Rightarrow \text{ contenido en agua real de la zona de las raíces en el intervalo de tiempo [$ cm^3 \; cm^{-3} $] } \\
+	&\Theta_t  \Rightarrow \text{ contenido en agua real de la zona de las raíces en el intervalo de tiempo [$ cm^3 \; cm^{-3} $] } \\
 	&IN_{up} \Rightarrow \text{ tasa de afluencia neta a través del límite superior de la zona radicular [$ cm \; d^{-1} $]} \\
 	&IN_{low} \Rightarrow \text{ tasa de afluencia neta a través del límite inferior de la zona radicular [$ cm \; d^{-1} $]} \\
 	&T_a \Rightarrow \text{ tasa de transpiración real del cultivo [$ cm \; d^{-1} $]} \\
@@ -103,7 +103,7 @@ El contenido real del agua en el suelo puede estimarse mediante la ecuación:
 	&E_s \Rightarrow \text{ tasa de evaporación del suelo [$ cm \; d^{-1} $]} \\
 	&SS_t \Rightarrow \text{ superficie de almacenamiento [$ cm $]} \\
 	&SR \Rightarrow \text{ tasa de escorrentía [$ cm \; d^{-1} $]} \\
-	&SR \Rightarrow \text{ tasa de ascenso capilar [$ cm \; d^{-1} $]} \\
+	&CR \Rightarrow \text{ tasa de ascenso capilar [$ cm \; d^{-1} $]} \\
 	&Perc \Rightarrow \text{ tasa de percolación [$ cm \; d^{-1} $]} \\
 	&\delta t \Rightarrow \text{ intervalo de tiempo [$ d $]} \\
 	&Z_t \Rightarrow \text{ profundidad de la capa freática [$ cm $]} \\
@@ -125,7 +125,7 @@ Los procesos que afectan directamente al contenido en agua del suelo radicular (
 	\label{fig:img_4}
 \end{figure}
 
-El contenido en agua de la zona radicular se obtiene a partir del cálculo diario del balance hídrico. En WOFOST se distinguen tres diferentes submodelos de agua en el suelo. Aunque WOFOST admite tres tipos de cálculos distintos del balance hídrico, el WOFOST de CGMS sólo considera los dos primeros sub-modelos, el tercero no es operativo por no disponer al pF del suelo.
+El contenido en agua de la zona radicular se obtiene a partir del cálculo diario del balance hídrico. En WOFOST se distinguen tres diferentes submodelos de agua en el suelo. Aunque WOFOST admite tres tipos de cálculos distintos del balance hídrico, el WOFOST de CGMS sólo considera los dos primeros sub-modelos, el tercero no es operativo por no disponer al pF (potencial capilar) del suelo.
 \begin{enumerate}
 	\item Cálculo del balance hídrico del suelo para la producción potencial: El más simple de los balances se aplica para simular la producción potencial. Se considera que la planta crece sin estrés hídrico asumiendo que el suelo está permanentemente a capacidad de campo, de modo que:
 	\begin{align*}
@@ -167,7 +167,7 @@ El contenido en agua de la zona radicular se obtiene a partir del cálculo diari
 	
 	Mediante WOFOST se pueden obtener distintos tipos de resultados: 
 	\begin{enumerate}
-		\item \textbf{Potenciales}. Producción potencial del cultivo: (IDSEM) Número de días desde la nascencia (d); (DVS) Estado de desarrollo del cultivo (-); (TSUM) Tiempo térmico desde la nascencia (ºC d); (WLV) Peso seco de las hojas vivas (k ha); (WST) Peso seco de las tallos vivas (k ha); (WSO) Peso seco de las órganos de reserva vivos (k ha); (TAGP) Producción total sobre el suelo (órganos vivos y muertos) (k ha); (LAI) Índice de Área Foliar (área foliar/superficie del suelo) (ha/ha); (TRA) Tasa de transpiración (mm/d); (GASS) Tasa de asimilación bruta (mm/d); (MRES) Tasa de respiración de mantenimiento (mm/d); (DMI) Incremento de la tasa de materia seca (k/ha d). 
+		\item \textbf{Potenciales}. Producción potencial del cultivo: (IDSEM) Número de días desde la nascencia (d); (DVS) Estado de desarrollo del cultivo (-); (TSUM) Tiempo térmico desde la nascencia (ºC d); (WLV) Peso seco de las hojas vivas (k ha); (WST) Peso seco de los tallos vivos (k ha); (WSO) Peso seco de los órganos de reserva vivos (k ha); (TAGP) Producción total sobre el suelo (órganos vivos y muertos) (k ha); (LAI) Índice de Área Foliar (área foliar/superficie del suelo) (ha/ha); (TRA) Tasa de transpiración (mm/d); (GASS) Tasa de asimilación bruta (mm/d); (MRES) Tasa de respiración de mantenimiento (mm/d); (DMI) Incremento de la tasa de materia seca (k/ha d). 
 		\item\textbf{ Con limitación de agua}. Producción con limitación de agua: (WLV) Peso seco de las hojas vivas (k ha); (WST) Peso seco de las tallos vivas (k ha); (WSO) Peso seco de las órganos de reserva vivos (k ha); (TAGP) Producción total sobre el suelo (órganos vivos y muertos) (k ha); (LAI) Índice de Área Foliar (área foliar/superficie del suelo) (ha/ha), (RD) Profundidad de la zona de enraizamiento real (cm); (SM) Contenido de agua en el suelo en la zona de enraizamiento real (cm3 agua/cm3 suelo); (RESRV) Agua del suelo disponible en la zona de enraizamiento potencial (en y por debajo de la zona de enraizamiento real) (cm suelo); (AVAIL) Agua disponible en la zona de enraizamiento real (cm agua) Sólo cuando se simula sin la influencia de agua subterránea); (RAIN) Precipitación total en el período de simulación (mm); (TRA) Tasa de transpiración (mm/d); (EVA(P)) Tasa de evaporación desde el suelo o del agua almacenada en la superficie del suelo (mm/d); (SS) Superficie de almacenamiento (cm agua); (ZT) Profundidad de la capa freática (cm por debajo de la superficie del suelo); (wet) Días caracterizados por un crecimiento reducido debido a la falta de oxígeno (d); (dry) Días caracterizados por un crecimiento reducido debido a la falta de agua (d). 
 		\item\textbf{ Con limitación de nutrientes}. Producción con limitación de nutrientes: Este caso no va a ser considerado en los procesos de simulación que van a llevarse a cabo ya que no se dispone de los datos. 
 		\item\textbf{ Balance hídrico}. Los resultados de balance hídrico se obtienen tanto para todo el sistema como para la zona radicular. Para todo el sistema los resultados que obtenemos son: (1) Contenido de agua inicial y final y su diferencia (bien para la zona radicular máxima o para los 10 primeros cm cuando consideramos la influencia del agua del suelo); (2) Superficie de almacenamiento de agua inicial y final y su diferencia; (3) Precipitación; (4) Evaporación (del suelo o la superficie de agua) y transpiración (del cultivo); juntos son pérdida de agua a la atmósfera y (5) Agua de escorrentía, percolación al agua del terreno y pérdida de agua debida al drenaje (cuando hay agua freática).
@@ -178,11 +178,54 @@ El contenido en agua de la zona radicular se obtiene a partir del cálculo diari
 	\end{enumerate}
 \end{enumerate}
 
+Luego de analizar todo lo anteriormente expuesto, se puede llegar a la conclusión que las principales razones por las que se escogió WOFOST como modelo para desarrollar la presente investigación son, en primer lugar, este modelo permite el estudio del comportamiento del cultivo y su rendimiento bajo diversas condiciones del medio, esto es de gran utilidad en Cuba ya que el país posee gran diversidad en los suelos, en las temperaturas, en las condiciones hídricas y otros factores que pueden influenciar el desarrollo de un determinado cultivo. En variadas ocasiones en Cuba hay limitantes hídricas, siendo WOFOST una de las mejores soluciones para estimar variables biológicas como el rendimiento de los órganos de almacenamiento y la biomasa total en dichas condiciones. Además brinda la posibilidad de analizar por separado el crecimiento del cultivo y el balance del agua, ya que el modelo se divide en dos submodelos. Este modelo mecanicista y dinámico ha sido aplicado en todo el mundo en cultivos en una amplia gama de condiciones climáticas y de gestión. Considera las limitantes de nitrógeno, fósforo y potasio en el crecimiento vegetal, aunque no considera los efectos tóxicos del alto contenido salino y/o de aluminio del suelo, aunque la mayoría de los modelos actuales no lo hacen.
 
+\section{Tecnología y Herramientas a Usar}
 
+Cuando se decidió escoger el modelo WOFOST para ser utilizado en la tesis, se decidió también buscar tecnologías viables para poder desarrollar el resto del proyecto.\\
 
+Luego de una ardua búsqueda se encontró una implementación de este modelo, \textbf{PCSE} (Python Crop Simulation Environment)  “Entorno de simulación de cultivos en Python”, que según su página oficial \parencite{wofost_oficial_page} , se desarrolló debido a la necesidad de reimplementar los modelos de simulación de cultivos que se desarrollaron en Wageningen. Muchos de los modelos de simulación de cultivos de Wageningen se desarrollaron originalmente en FORTRAN77 o utilizando el FORTRAN Simulation Translator (FST). Aunque este enfoque ha dado lugar a modelos de gran calidad y con un alto rendimiento numérico, las limitaciones inherentes a los modelos escritos en FORTRAN son cada vez más evidentes:
+\begin{itemize}
+	\item La estructura de los modelos suele ser bastante monolítica y las diferentes partes están muy acopladas. Sustituir partes del modelo por otro enfoque de simulación no es fácil.
+	\item Los modelos se basan en la I/O basada en archivos, que es difícil de cambiar. Por ejemplo, la interconexión con las bases de datos es complicada en FORTRAN.
+	\item En general, con lenguajes de bajo nivel como FORTRAN, las cosas sencillas ya requieren muchas líneas de código y es fácil que se cometan errores, sobre todo por parte de agrónomos y científicos de cultivos que tienen poca experiencia en el desarrollo o la adaptación de software.
+\end{itemize}
 
+Para superar muchas de las limitaciones anteriores, se creó el Entorno de Simulación de Cultivos Python (PCSE). Este proporciona un entorno para desarrollar modelos de simulación, así como una serie de implementaciones de modelos de simulación de cultivos. PCSE está escrito en código Python puro, lo que lo hace más flexible, más fácil de modificar y extensible, permitiendo una fácil interconexión con bases de datos, interfaces gráficas de usuario, herramientas de visualización y paquetes numéricos/estadísticos. PCSE tiene varias características interesantes:
 
+\begin{itemize}
+	\item Implementación en Python puro. El núcleo del sistema tiene un pequeño número de dependencias fuera de la biblioteca estándar de Python. Sin embargo, muchos proveedores de datos requieren la instalación de ciertos paquetes. La mayoría de ellos pueden ser instalados automáticamente desde el Python Package Index (PyPI) (SQLAlchemy, PyYAML, xlrd, openpyxl, requests) y en el procesamiento de la salida de los modelos se hace más fácilmente con pandas DataFrames.
+	\item Diseño modular que permite añadir o cambiar componentes con relativa rapidez con un enfoque sencillo pero potente para comunicar variables entre módulos.
+	\item Al igual que el FST, impone un buen diseño del modelo al separar explícitamente los parámetros, las variables de tasa y las variables de estado. Además, PCSE se encarga de la inicialización del módulo, el cálculo de las tasas de cambio, la actualización de las variables de estado y las acciones necesarias para finalizar la simulación.
+	\item La Input/Output está completamente separada del propio modelo de simulación. Por lo tanto, los modelos PCSE pueden leer y escribir fácilmente en archivos de texto, bases de datos y formatos científicos como HDF o NetCDF. Además, los modelos PCSE se pueden incrustar fácilmente en, por ejemplo, contenedores Docker para construir una API web alrededor de un modelo de cultivo.
+	\item Pruebas integradas de los módulos del programa que garantizan la integridad del sistema.
+\end{itemize}
+
+PCSE se desarrolló ante todo por una necesidad científica, para poder adaptar rápidamente los modelos y probar las ideas. En el ámbito científico, Python se está convirtiendo rápidamente en una herramienta para la implementación de algoritmos, la visualización y el análisis exploratorio debido a su sintaxis clara y su facilidad de uso. Una ventaja adicional es que la implementación en C de Python puede interconectarse fácilmente con rutinas escritas en FORTRAN y, por tanto, muchas rutinas FORTRAN pueden ser reutilizadas por modelos de simulación escritos con PCSE.
+
+Existen muchos paquetes para el análisis numérico (por ejemplo, NumPy, SciPy), la visualización (por ejemplo, MatPlotLib, Chaco), la computación distribuida (por ejemplo, IPython, pyMPI) y la interconexión con bases de datos (por ejemplo, SQLAlchemy). Además, para los análisis estadísticos se puede establecer una interfaz con el  R-project a través de Rpy o Rserve. Por último, Python es un lenguaje de programación interpretado de código abierto que se ejecuta en casi cualquier hardware y sistema operativo.
+
+Dadas las consideraciones anteriores, se reconoció rápidamente que Python era una buena opción. Aunque, PCSE fue desarrollado para fines científicos, ya ha sido implementado para tareas en entornos de producción y ha sido incrustado en servicios web basados en contenedores.\\
+
+Hasta la versión 4.1, PCSE se denominaba "PyWOFOST", ya que su objetivo principal era proporcionar una implementación en Python del modelo de simulación de cultivos WOFOST. Sin embargo, a medida que el sistema ha ido creciendo, se ha hecho evidente que puede utilizarse para implementar, ampliar o hibridar modelos de simulación (de cultivos). Por lo tanto, el nombre "PyWOFOST" se volvió demasiado estrecho y se seleccionó el nombre de Entorno de Simulación de Cultivos Python en analogía con el Entorno de Simulación FORTRAN (FSE).\\
+
+El PCSE también tiene sus limitaciones, entre estas se puede citar la velocidad, la flexibilidad tiene un precio; PCSE es considerablemente más lento que los modelos equivalentes escritos en FORTRAN u otro lenguaje compilado. El enfoque de simulación en PCSE se limita actualmente a la integración rectangular (Euler) con un paso de tiempo diario fijo. Sin embargo, el paso de tiempo interno de los módulos puede ser más preciso si es necesario. Además, no hay interfaz gráfica de usuario. Sin embargo, la falta de una interfaz de usuario se compensa en parte mediante el uso de PCSE con el paquete pandas y el cuaderno Jupyter. La salida de PCSE se puede convertir fácilmente en un DataFrame de pandas que se puede utilizar para mostrar gráficos en un cuaderno Jupyter.\\
+
+Entre la amplia cantidad de librerías encontradas en Python para diversos usos, se cuenta con Flask, que según  \parencite{flask_que_2017}, es un micro Framework para desarrollar una App básica o una forma ágil, o sea, para determinadas aplicaciones que no necesiten de muchas extenciones; incluye un servidor web de desarrollo, por lo que no se necesita de una infraestructura con un servidor web para probar las aplicaciones, en otras palabras, tiene hot-reload; tiene un depurador y soporte integrado para pruebas unitarias; es compatible con Python3 y con wsgi, que no es más que un protocolo que utilizan los servidores web para servir páginas web escritas en Python; tiene un fácil manejo de rutas; soporta de manera nativa el uso de cookies seguras; se pueden usar sesiones; es Open Source y se encuentra amparado bajo una licencia BSD; presenta buena documentación con ejemplos de proyectos en GitHub; sirve para construir servicios web como aplicaciones de contenido estático o APIs REST, que es precisamente la tecnología que se desea usar, por lo que se detallará más a continuación.\\
+
+Una \textbf{API} \parencite{apirest_definicion_2020} (Application Programming Interface)  “Interfaz del programa de aplicación” es un conjunto de reglas que permite que diferentes programas se comuniquen entre sí. Describe la manera apropiada para que un desarrollador de software componga un programa en un servidor que se comunica con varias aplicaciones cliente.
+
+La integración de API se refiere a un par de aplicaciones (dos o más) interconectadas a través de sus API para intercambiar datos y realizar una función conjunta, lo que permite la interacción entre aplicaciones.
+
+Ahora que hemos definido la API, pasemos a las API REST. Varios sitios web como Amazon, Google, Facebook, LinkedIn y Twitter utilizan API basadas en REST que permiten a los usuarios comunicarse con estos servicios en la nube. Esta se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de RESTful.\\
+
+Como se ha mencionado anteriormente la integración de API se refiere a dos o más aplicaciones interconectadas, de manera que si se tuviese una aplicación servidor encargada de ejecutar pedidos, y brindar información, a pesar de su eficacia, esta no es muy intuitiva para los usuarios, por lo tanto, una forma de que el usuario final pueda interactuar con el servidor backend sería mediante una interfaz de usuario, ya sea una aplicación de escritorio, móvil o una página web, que es una de las ideas finales de este proyecto, hacer llegar este tipo de aplicación a usuarios inexpertos en el tema de la modelación y simulación, dejando sólo que se concentren en interactuar de manera sencilla con la simulación de cultivos sin necesidad de escribir una línea de código.\\
+
+Para el desarrollo de la interfaz de usuario el autor propone la creación de una página web utilizando React como tecnología principal. Según su página oficial \parencite{react_oficial_page}, React se define como una biblioteca de javaScript para construir interfaces de usuario. 
+
+React permite además crear interfaces de usuario interactivas de forma sencilla; crear componentes encapsulados que manejen su propio estado, y convertirlos en interfaces de usuario complejas; renderizar desde el servidor usando Node, así como potencializar aplicaciones móviles usando React Native. Además, React se encarga de actualizar y renderizar de manera eficiente los componentes correctos en una aplicación cuando los datos cambien; las vistas declarativas hacen que el código sea más predecible, por lo tanto, fácil de depurar; dado que la lógica de los componentes está escrita en JavaScript y no en plantillas, es posible pasar datos de forma sencilla a través de la aplicación y mantener el estado fuera del DOM. React se vincula al resto de herramientas tecnológicas, así que será posible desarrollar nuevas características sin necesidad de volver a escribir el código existente.\\
+
+Solo falta mencionar, donde almacenar toda la información, configuración, variables de entrada de cultivos, suelo y clima. Para esto se usará, una base de datos SQLite, que según su página oficial \parencite{sqlite_nodate}, es una biblioteca en lenguaje C que implementa un motor de base de datos SQL pequeño, rápido, autónomo, de alta fiabilidad y con todas las funciones; es el motor de base de datos más utilizado en el mundo; está integrado en todos los teléfonos móviles y en la mayoría de los ordenadores, y viene incluido en innumerables aplicaciones que la gente utiliza a diario; su formato de archivo es estable, multiplataforma y compatible con versiones anteriores, y los desarrolladores se comprometen a mantenerlo hasta el año 2050; los archivos de bases de datos SQLite se utilizan habitualmente como contenedores para transferir contenidos ricos entre sistemas y como formato de archivo de datos a largo plazo; hay más de 1 billón (1e12) de bases de datos SQLite en uso activo. Su código fuente es de dominio público y su uso es gratuito para todo el mundo.\\
 
 
 
