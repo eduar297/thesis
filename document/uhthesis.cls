@@ -161,7 +161,6 @@
 
 \renewcommand{\nomname}{Glosario}
 \newcommand{\advisor}[1]{\def\@advisor{#1}}
-\newcommand{\coadvisor}[1]{\def\@coadvisor{#1}}
 \newcommand{\degree}[1]{\def\@degree{#1}}
 \newcommand{\faculty}[1]{\def\@faculty{#1}}
 \newcommand{\logo}[1]{\def\@logo{#1}}
@@ -228,7 +227,6 @@
     {\Large Autor: \textbf{\@author}} \\
     \vskip 0.5cm
     {\Large Tutor: \textbf{\@advisor}} \\
-    {\Large Cotutor: \textbf{\@coadvisor}} \\
     \vfill
     {\large Trabajo de Diploma \\presentado en opción al título de \\ \@degree} \\
     \vskip 1cm
